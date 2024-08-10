@@ -46,9 +46,3 @@ p1.move(-5, 20)
 print(p1.get_pos())
 
 p1.voice()
-
-# Вывод на консоль:
-# (0, 0)
-# (10, 15)
-# (5, 35)
-# I train, eat, sleep, and repeat
