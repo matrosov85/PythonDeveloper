@@ -4,10 +4,17 @@
 # этого объекта, чтобы определить его тип, атрибуты, методы, модуль, и другие свойства.
 
 def introspection_info(obj):
+    attributes = []
+    methods = []
+    for attr in dir(obj):
+        if callable(getattr(obj, attr)):
+            methods.append(attr)
+        else:
+            attributes.append(attr)
     return {
         'type': type(obj).__name__,
-        'attributes': dir(obj),
-        'methods': [method for method in dir(obj) if callable(getattr(obj, method))],
+        'attributes': attributes,
+        'methods': methods,
         'module': obj.__class__.__module__
     }
 
